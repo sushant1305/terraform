@@ -1,0 +1,818 @@
+    1  cd
+    2  sudo systemctl enable ssh
+    3  sudo systemctl start ssh
+    4  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+    5  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+    6  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    7  sudo apt update && sudo apt install terraform
+    8  terraform -v
+    9  clear
+   10  curl
+   11  apt install curl
+   12  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+   13  az login
+   14  az ad sp create-for-rbac --name training --role Contributor --scopes /subscriptions/25798c33-c3d0-45ba-be3e-0cca38f5de8d
+   15  cd
+   16  pwd
+   17  mkdir app1
+   18  cd app1/
+   19  cwd
+   20  vi main.tf
+   21  ls -la
+   22  terraform init
+   23  ls -la
+   24  cd .terraform
+   25  ll
+   26  cd providers/
+   27  ll
+   28  cd registry.terraform.io/
+   29  ll
+   30  cd hashicorp/
+   31  ll
+   32  cd azurerm/
+   33  ll
+   34  cd 3.0.0/
+   35  ll
+   36  cd linux_amd64/
+   37  ll
+   38  cd /
+   39  cd app1
+   40  ll
+   41  cd /home/
+   42  ll
+   43  cd palmeto/
+   44  ll
+   45  cd .
+   46  cd ..
+   47  cd ~/app1/
+   48  ll
+   49  pwd
+   50  ll
+   51  cat .terraform.lock.hcl 
+   52  vi main.tf 
+   53  terraform init
+   54  terraform init -upgrade
+   55  ll
+   56  cat .terraform.lock.hcl 
+   57  ls -ltr
+   58  cd 
+   59  ls -ltr
+   60  cd state/
+   61  ls -ltr
+   62  terraform apply --auto-approve
+   63  cd 
+   64  cd state/
+   65  ll
+   66  terraform apply --auto-approve
+   67  cd /root/mapwithfor/
+   68  ll
+   69  cat network.tf 
+   70  vi main.tf 
+   71  cat network.tf 
+   72  vi main.tf 
+   73  ll
+   74  terraform validate
+   75  terraform init
+   76  terraform plan
+   77  terraform apply
+   78  terraform destroy
+   79  ll
+   80  vi output.tf
+   81  terraform fmt
+   82  cat output.tf 
+   83  vi output.tf 
+   84  terraform output
+   85  terraform validate
+   86  terraform apply
+   87  terraform output
+   88  vi variables.tf 
+   89  vi network.tf 
+   90  vi main.tf 
+   91  terraform validate
+   92  vi variables.tf 
+   93  terraform fmt
+   94  vi variables.tf
+   95  terraform plan
+   96  terraform apply
+   97  ssh-keygen
+   98  cp /root/.ssh/id_rsa.pub key.pub
+   99  vi variables.tf 
+  100  vi storageandkey.tf 
+  101  vi main.tf 
+  102  vi output.tf 
+  103  terraform plan
+  104  terraform apply
+  105  ssh azureuser@13.92.191.38
+  106  az
+  107  az vm deallocate --resource-group rg-darling-mayfly --name myVM
+  108  history
+  109  history >> /home/palmeto/command_history.txt
+  110  vi main.tf 
+  111  terraform fmt
+  112  cat main.tf 
+  113  vi provider.tf 
+  114  terraform fmt
+  115  cat provider.tf 
+  116  terraform init
+  117  terraform plan
+  118  vi main.tf 
+  119  cat main.tf 
+  120  vi main.tf 
+  121  terraform fmt
+  122  cat main.tf 
+  123  terraform plan
+  124  terraform apply
+  125  vi main.tf 
+  126  terraform fmt
+  127  terraform apply
+  128  vi variables.tf 
+  129  vi main.tf 
+  130  terraform apply
+  131  terraform destroy --auto-approve
+  132  vi variables.tf 
+  133  terraform apply --auto-approve
+  134  vi main.tf 
+  135  terraform destroy --auto-approve
+  136  vi variables.tf 
+  137  terraform apply --auto-approve
+  138  git
+  139  ll
+  140  cat key.pub 
+  141  cd ..
+  142  ll
+  143  mkdir loop
+  144  cd loop/
+  145  cp ../linuxvm/key.pub .
+  146  vi provider.tf
+  147  cp ../linuxvm/variables.tf .
+  148  vi variables.tf 
+  149  cp ../linuxvm/rg.tf .
+  150  cp ../linuxvm/storageandkey.tf .
+  151  cp ../linuxvm/network.tf .
+  152  vi network.tf 
+  153  cp ../linuxvm/main.tf .
+  154  vi main.tf 
+  155  cp ../linuxvm/output.tf .
+  156  vi output.tf 
+  157  terraform init
+  158  terraform validate
+  159  terraform plan
+  160  terraform apply --auto-approve
+  161  terraform destroy
+  162  terraform apply --auto-approve
+  163  terraform destroy --auto-approve
+  164  terraform apply --auto-approve
+  165  vi network.tf 
+  166  terraform destroy --auto-approve
+  167  terraform fmt
+  168  terraform apply --auto-approve
+  169  terraform destroy --auto-approve
+  170  vi variables.tf 
+  171  vi network.tf 
+  172  vi main.tf 
+  173  terraform validate
+  174  terraform apply --auto-approve
+  175  cd ../linuxvm/
+  176  terraform destroy --auto-approve
+  177  cd ..
+  178  ll
+  179  cd app1/
+  180  ll
+  181  cat terraform.tfstate
+  182  terraform destroy --auto-approve
+  183  cd ..
+  184  ll
+  185  mkdir for
+  186  cd for/
+  187  ll
+  188  vi provider.tf
+  189  vi main.tf
+  190  terraform init
+  191  terrafrom fmt
+  192  terraform 
+  193  terraform apply
+  194  terraform destroy --auto-approve
+  195  cd ..
+  196  mkdir import
+  197  cd import/
+  198  vi main.tf
+  199  vi provider.tf
+  200  ccat main.tf 
+  201  cat main.tf 
+  202  terraform init
+  203  terraform import azurerm_resource_group.rg /subscriptions/25798c33-c3d0-45ba-be3e-0cca38f5de8d/resourceGroups/import
+  204  ll
+  205  terraform apply
+  206  terraform destroy --auto-approve
+  207  cd ..
+  208  ll
+  209  cd for/
+  210  ll
+  211  terraform destroy --auto-approve
+  212  ll
+  213  cd ..
+  214  ll
+  215  ls -ltr
+  216  cd loop/
+  217  ll
+  218  cat terraform.tfstate
+  219  terraform destroy --auto-approve
+  220  cd ../import/
+  221  ll
+  222  az group create --name terraformstate --location eastus
+  223  az storage account create --resource-group terraformstate --name {yourname}tfstate3005 --sku Standard_LRS --encryption-service blob
+  224  az storage account create --resource-group terraformstate --name sushanttfstate3005 --sku Standard_LRS --encryption-service blob
+  225  az storage container create --name tfstate --account-name sushanttfstate3005
+  226  az storage account keys list --resource-group terraformstate --account-name sushanttfstate3005
+  228  echo $ARM_ACCESS_KEY
+  229  cd ..
+  230  mkdir state
+  231  cd state/
+  232  ll
+  233  cp ../loop/provider.tf .
+  234  vi provider.tf 
+  235  vi main.tf
+  236  terraform fmt
+  237  terraform init
+  238  terraform apply
+  239  cd ..
+  240  ll
+  241  ls -ltr
+  242  cd linuxvm/
+  243  terraform apply --auto-approve
+  244  ll
+  245  cat .terraform
+  246  cat .terraform.lock.hcl 
+  247  terraform destroy --auto-approve
+  248  cd ../state/
+  249  ll
+  250  vi main.tf 
+  251  terraform apply --auto-approve
+  252  cd ../linuxvm/
+  253  terraform workspace list
+  254  terraform workspace new dev
+  255  terraform workspace new test
+  256  terraform workspace new prod
+  257  ll
+  258  cd terraform.tfstate.d/
+  259  ll
+  260  cd dev/
+  261  ll
+  262  cd ..
+  263  tree 
+  264  tree .
+  265  cd ..
+  266  terraform workspace select dev
+  267  vi rg.tf
+  268  terraform validate
+  269  terraform apply
+  270  ll
+  271  cat terraform.tfstate
+  272  cd terraform.tfstate.d/
+  273  ll
+  274  cd dev/
+  275  ll
+  276  cat terraform.tfstate 
+  277  cd ..
+  278  ll
+  279  cd ..
+  280  ll
+  281  terraform workspace select test
+  282  terraform workspace select default
+  283  ll
+  284  vi provider.tf 
+  285  vi rg.tf 
+  286  terraform apply --auto-approve
+  287  terraform destroy --auto-approve
+  288  terraform workspace select dev
+  289  terraform destroy --auto-approve
+  290  pwd
+  291  cd ..
+  292  ll
+  293  ls -ltr
+  294  mkdir -p modules/vm
+  295  cd modules/vm/
+  296  ll
+  297  vi variables.tf
+  298  cp ../../linuxvm/key.pub  .
+  299  vi rg.tf
+  300  vi network.tf
+  301  vi storageaccount.tf
+  302  vi main.tf
+  303  cd ../..
+  304  mkdir usemodules && cd usemodules
+  305  vi provider.tf
+  306  vi main.tf
+  307  vi ./../modules/vm/variables.tf 
+  308  ls -ltr ./../modules/vm/
+  309  ll
+  310  terraform init
+  311  terraform fmt
+  312  terraform validate
+  313  terraform apply --auto-approve
+  314  vi provider.tf 
+  315  terraform apply --auto-approve
+  316  ll
+  317  cat terraform.tfstate
+  318  ll
+  319  cat provider.tf 
+  320  cat main.tf 
+  321  vi main.tf 
+  322  terraform apply
+  323  terraform apply --auto-approve
+  324  ll
+  325  vi ./../modules/vm/variables.tf 
+  326  vi main.tf 
+  327  vi ./../modules/vm/main.tf 
+  328  terraform apply
+  329  vi main.tf 
+  330  terraform plan
+  331  terraform apply --auto-approve
+  332  terraform destroy --auto-approve
+  333  cd ..
+  334  ll
+  335  git clone git@github.com:sushant1305/terraform.git
+  336  ca modules/vm/key.pub 
+  337  cat modules/vm/key.pub 
+  338  git clone git@github.com:sushant1305/terraform.git
+  339  cd terraform/
+  340  ll
+  341  cd ..
+  342  cd terrafrom
+  343  cd terraform/
+  344  git checkout -b feature/training
+  345  cd ..
+  346  ll
+  347  cp -rf linuxvm/ terraform/ 
+  348  ls terraform/
+  349  cp -rf for/ terraform/
+  350  cp -rf import/ terraform/
+  351  cp -rf loop/ terraform/
+  352  cp -rf modules/ terraform/
+  353  cp -rf state/ terraform/
+  354  cp -rf usemodules/ terraform/
+  355  ls terraform/
+  356  cp -rf app1/ terraform/
+  357  cd terraform/
+  358  git add .;git commit -m "Initial commit";git push -u origin feature/training
+  359  git config --global user.email "sushant.mad@gmail.com"
+  360  git config --global user.name "Sushant Mohan"
+  361  git add .;git commit -m "Initial commit";git push -u origin feature/training
+  362  cat modules/vm/key.pub 
+  363  git push -u origin feature/training
+  364  ls -ltr
+  365  du -sh .
+  366  cd app1/
+  367  ll
+  368  cd ..
+  369  df -h .
+  370  du -h .
+  371  ll
+  372  cd app1/
+  373  ll -a
+  374  rm -rf terraform.tf
+  375  rm -rf .terraform
+  376  cd ..
+  377  ll
+  378  rm -rf for/.terraform
+  379  rm -rf import/.terraform
+  380  rm -rf loop/.terraform
+  381  rm -rf modules/.terraform
+  382  rm -rf state/.terraform
+  383  rm -rf usemodules/.terraform
+  384  du -h .
+  385  git add .;git commit -m "Initial commit";git push -u origin feature/training
+  386  rm -rf app1/.terraform
+  387  ll
+  388  cd app1/
+  389  ll -a
+  390  cd ..
+  391  cd .
+  392  cd ..
+  393  mkdir mapwithfor
+  394  vi provider.tf
+  395  vi variables.tf
+  396  cp ../linuxvm/key.pub .
+  397  mv provider.tf mapwithfor/
+  398  mv variables.tf mapwithfor/
+  399  cd mapwithfor/
+  400  cp ../linuxvm/key.pub .
+  401  vi rg.tf
+  402  vi storageaccount.tf
+  403  vi network.tf
+  404  cp ../loop/main.tf .
+  405  ll
+  406  vi network.tf 
+  407  vi rg.tf 
+  408  terraform init
+  409  vi rg.tf 
+  410  terraform init
+  411  terraform appluy --auto-approve
+  412  terraform apply --auto-approve
+  413  vi rg.tf 
+  414  terraform apply --auto-approve
+  415  vi network.tf
+  416  vi main.tf 
+  417  cd ..
+  418  snap install terragrunt
+  419  terragrunt
+  420  terraform apply --auto-approve
+  421  cd mapwithfor/
+  422  terraform apply --auto-approve
+  423  cd ..
+  424  vi terragrunt.hcl
+  425  mkdir live
+  426  mkdir -p live/dev
+  427  mkdir -p live/prod
+  428  mkdir -p live/prod/vm
+  429  mkdir -p live/dev/vm
+  430  vi live/dev/vm/terragrunt.hcl
+  431  vi live/prod/vm/terragrunt.hcl
+  432  cat live/dev/vm/terragrunt.hcl
+  433  vi live/prod/vm/terragrunt.hcl
+  434  cd live/dev/vm/
+  435  terragrunt init
+  436  snap remove terragrunt
+  437  cd ../../..
+  438  wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.58.12/terragrunt_linux_amd64
+  439  mv terragrunt_linux_amd64 terragrunt
+  440  chmod +x terragrunt
+  441  mv terragrunt /usr/local/bin/
+  442  exec bash
+  443  terragrunt
+  444  cd live/dev/vm/
+  445  ll
+  446  trragrunt init
+  447  terragrunt init
+  448  vi /root/terragrunt.hcl 
+  449  terragrunt init
+  450  terragrunt plan
+  451  vi terragrunt.hcl 
+  452  terragrunt plan
+  453  cd ../../..
+  454  cd modules/vm/
+  455  cd -
+  456  cd live/dev/
+  457  cd vm/
+  458  terragrunt init
+  459  vi terragrunt.hcl 
+  460  terragrunt init
+  461  terragrunt plan
+  462  ll
+  463  rm .terraform.lock.hcl 
+  464  rm .terragrunt-cache/
+  465  rm -rf .terragrunt-cache/
+  466  terragrunt init
+  467  terragrunt plan
+  468  cd ../../../modules/vm/
+  469  ll
+  470  vi rg.tf 
+  471  cd ../../live/dev/vm/
+  472  terragrunt plan
+  473  vi ../../../modules/vm/variables.tf 
+  474  terragrunt plan
+  475  terragrunt apply
+  476  terragrunt destroy
+  477  df -h
+  478  df -h .
+  479  du -h .
+  480  cd ../../../usemodules/
+  481  ll
+  482  terraform plan
+  483  terraform login
+  484  ls
+  485  vi provider.tf 
+  486  terraform fmt
+  487  cat provider.tf 
+  488  vi provider.tf 
+  489  cd ../linuxvm/
+  490  vi provider.tf 
+  491  terrafrom fmt
+  492  terraform fmt
+  493  env | grep ARM
+  494  terraform init
+  495  vi rg.tf 
+  496  terraform plan
+  497  terraform apply
+  498  vi main.tf 
+  499  vi rg.tf 
+  500  terraform apply
+  501  vi main.tf 
+  502  cd ..
+  503  sudo apt-add-repository ppa:ansible/ansible
+  504  sudo apt update
+  505  sudo apt install ansible
+  506  ansible
+  507  mkdir ansible
+  508  cd ansible/
+  509  cp ../linuxvm/provider.tf .
+  510  vi provider.tf 
+  511  vi variables.tf
+  512  vi main.tf
+  513  terraform validate
+  514  vi playbook.yaml
+  515  ansible-playbook playbook.yaml --syntax-check
+  516  ansible-playbook playbook.yaml --check
+  517  vi ansible.tf
+  518  terraform init
+  519  terraform plan
+  520  ll
+  521  vi ansible.tf 
+  522  terraform plan
+  523  vi main.tf 
+  524  mv main.tf main_1.tf
+  525  vi main.tf
+  526  rm main_1.tf 
+  527  terraform plan
+  528  terraform apply
+  529  ll
+  530  vi provider.tf
+  531  vi variables.tf 
+  532  vi main.tf 
+  533  vi ansible.tf 
+  534  terraform init
+  535  terraform plan
+  536  terraform apply
+  537  terraform destroy --auto-approve
+  538  terraform apply --auto-approve
+  539  du -sh .
+  540  du -h .
+  541  cd ..
+  542  ll
+  543  cp -rf ansible/ terraform/
+  544  cd terra
+  545  cd terraform/
+  546  ll
+  547  ll -a
+  548  cd .git/
+  549  ll
+  550  cd ..
+  551  vi .gitignore
+  552  git status
+  553  git add .
+  554  git commit -m "Initial commit"
+  555  git push
+  556  git push --set-upstream origin feature/training
+  557  vi .gitignore 
+  558  git push --set-upstream origin feature/training
+  559  git stash
+  560  ll
+  561  git status
+  562  tree ansible/
+  563  git rm -r --cached
+  564  git rm -r --cached .
+  565  git add .
+  566  git commit -m "Ignored terraform dir"
+  567  git push
+  568  git push --set-upstream origin feature/training
+  569  git rm -r --cached .
+  570  vi .gitignore
+  571  pwd
+  572  git add .
+  573  git commit -m "THird commit"
+  574  git push
+  575  git push --set-upstream origin feature/training
+  576  cd ..
+  577  mkdir format && cd format
+  578  vi main.tf
+  579  terraform apply
+  580  cd ../terraform/
+  581  git show
+  582  git commits
+  583  git commit --help
+  584  git log --branches --not --remotes
+  585  git reset --hard origin/feature/training
+  586  git reset --hard HEAD~1
+  587  ll
+  588  cd ..
+  589  rm -rf terraform/
+  590  git clone git@github.com:sushant1305/terraform.git
+  591  ll
+  592  cp -rf ansible/ terraform/
+  593  cp -rf app1/ terraform/
+  594  cp -rf for/ terraform/
+  595  cp -rf format/ terraform/
+  596  cp -rf import/ terraform/
+  597  cp -rf linuxvm/ terraform/
+  598  cp -rf live/ terraform/
+  599  cp -rf mapwithfor/ terraform/
+  600  cp -rf modules/ terraform/
+  601  cp -rf state/ terraform/
+  602  cp -rf usemodules/ terraform/
+  603  cd terraform/
+  604  cd ..
+  605  cp -rf terragrunt/ terraform/
+  606  cd terraform/
+  607  ll
+  608  vi .gitignore
+  609  ls -ltr
+  610  ls -ltra
+  611  cat .gitignore
+  612  git add .;git commit -m "first commit"
+  613  git push
+  614  git push --set-upstream origin feature/training
+  615  git checkout -b feature/training master
+  616  ll
+  617  git add .;git commit -m "first commit"
+  618  git push --set-upstream origin feature/training
+  619  git cehckout master
+  620  git checkout master
+  621  git stash
+  622  ll
+  623  cd ..
+  624  rm -rf terraform/
+  625  history | tail -30
+  626  history | tail -40
+  627  git clone git@github.com:sushant1305/terraform.git
+  628  cd terraform/
+  629  git checkout -b feature/training
+  630  cd ..
+  631  cp -rf ansible/ terraform/;cp -rf app1/ terraform/;cp -rf for/ terraform/;cp -rf format/ terraform/;cp -rf import/ terraform/;cp -rf linuxvm/ terraform/;cp -rf live/ terraform/;cp -rf mapwithfor/ terraform/;cp -rf modules/ terraform/;cp -rf state/ terraform/;cp -rf usemodules/ terraform/
+  632  cd terraform/
+  633  vi .gitignore
+  634  git add .;git coommit -m "First commit"
+  635  git add .;git commit -m "First commit"
+  636  git push
+  637  git push --set-upstream origin feature/training
+  638  cat app1/provider.tf 
+  639  vi app1/provider.tf 
+  640  git add .;git commit -m "Removed keys"
+  641  git push --set-upstream origin feature/training
+  642  vi .gitignore 
+  643  git add .;git commit -m "Removed keys"
+  644  git push --set-upstream origin feature/training
+  645  cd ..
+  646  rm -rf terraform/
+  647  ll
+  648  git clone git@github.com:sushant1305/terraform.git
+  649  cd terraform
+  650  git checkout -b feature/training
+  651  cp -rf ansible/ terraform/;cp -rf app1/ terraform/;cp -rf for/ terraform/;cp -rf format/ terraform/;cp -rf import/ terraform/;cp -rf linuxvm/ terraform/;cp -rf live/ terraform/;cp -rf mapwithfor/ terraform/;cp -rf modules/ terraform/;cp -rf state/ terraform/;cp -rf usemodules/ terraform/
+  652  cd ..
+  653  cp -rf ansible/ terraform/;cp -rf app1/ terraform/;cp -rf for/ terraform/;cp -rf format/ terraform/;cp -rf import/ terraform/;cp -rf linuxvm/ terraform/;cp -rf live/ terraform/;cp -rf mapwithfor/ terraform/;cp -rf modules/ terraform/;cp -rf state/ terraform/;cp -rf usemodules/ terraform/
+  654  cd terraform/
+  655  cd app1
+  656  ll
+  657  vi provider.tf 
+  658  cd ..
+  659  ll
+  660  cd linuxvm/
+  661  ll
+  662  cd..
+  663  cd ..
+  664  vi .gitignore
+  665  git add .
+  666  git commit -m "First commit"
+  667  git push
+  668  git push --set-upstream origin feature/training
+  669  git stash
+  670  vi .gitignore
+  671  git add .;git commit -m "First commit"
+  672  git push --set-upstream origin feature/training
+  673  git rebase -ie
+  674  git rebase -i
+  675  git branch --set-upstream-to=<remote>/<branch> feature/training
+  676  git branch --set-upstream-to=feature/training
+  677  git rebase feature/training
+  678  git add .;git commit -m "First commit"
+  679  git push --set-upstream origin feature/training
+  680  cd ..
+  681  rm -rf terraform/*
+  682  ll
+  683  cd terraform/
+  684  ll
+  685  cat .gitignore 
+  686  git add .;git commit -m "First commit"
+  687  git push --set-upstream origin feature/training
+  688  git show
+  689  cd ..
+  690  mv terraform/.gitignore .
+  691  rm -rf terraform/
+  692  git clone git@github.com:sushant1305/terraform.git
+  693  cd terraform/
+  694  git checkout -b feature/training
+  695  cd ..
+  696  cp -rf ansible/ terraform/;cp -rf app1/ terraform/;cp -rf for/ terraform/;cp -rf format/ terraform/;cp -rf import/ terraform/;cp -rf linuxvm/ terraform/;cp -rf live/ terraform/;cp -rf mapwithfor/ terraform/;cp -rf modules/ terraform/;cp -rf state/ terraform/;cp -rf usemodules/ terraform/
+  697  cd terraform/
+  698  vi app1/provider.tf 
+  699  cd ..
+  700  cd terraform/
+  701  mv ../.gitignore .
+  702  cat .gitignore 
+  703  git add .
+  704  git commit -m "Initial commit"
+  705  git push
+  706  git push --set-upstream origin feature/training
+  707  cat linuxvm/terraform.tfstate.backup
+  708  cat linuxvm/terraform.tfstate
+  709  vi .gitignore
+  710  find . -type -name terraform.tfstate.backup
+  711  find . -type f -name terraform.tfstate.backup
+  712  rm import/terraform.tfstate.backup
+  713  rm ansible/terraform.tfstate.backup
+  714  rm usemodules/terraform.tfstate.backup
+  715  rm app1/terraform.tfstate.backup
+  716  rm linuxvm/terraform.tfstate.d/dev/terraform.tfstate.backup
+  717  rm linuxvm/terraform.tfstate.backup
+  718  rm for/terraform.tfstate.backup
+  719  git add .;git commit -m "Initial commit"
+  720  git push --set-upstream origin feature/training
+  721  rm linuxvm/terraform.tfstate.backup
+  722  git stash
+  723  mv .gitignore ../
+  724  cd ..
+  725  rm -rf terraform/
+  726  git clone git@github.com:sushant1305/terraform.git
+  727  cd terraform
+  728  git checkout -b feature/training
+  729  cd ..
+  730  cp -rf ansible/ terraform/;cp -rf app1/ terraform/;cp -rf for/ terraform/;cp -rf format/ terraform/;cp -rf import/ terraform/;cp -rf linuxvm/ terraform/;cp -rf live/ terraform/;cp -rf mapwithfor/ terraform/;cp -rf modules/ terraform/;cp -rf state/ terraform/;cp -rf usemodules/ terraform/
+  731  cd terraform/
+  732  mv ../.gitignore .
+  733  vi .gitignore
+  734  vi app1/provider.tf
+  735  git add .;git commit -m "first commit"
+  736  git push
+  737  git push --set-upstream origin feature/training
+  738  terraform plan --help
+  739  echo $ENV
+  740  echo env
+  741  env
+  742  env >> /root/terraform/env_vars.txt
+  743  vi env_vars.txt 
+  744  vi codeshare.txt
+  745  git add .
+  746  vi codeshare.txt 
+  747  rm codeshare.txt 
+  748  git add .
+  749  git commit -m "second commit";git push
+  750  cd ..
+  751  ll
+  752  cd ansible/
+  753  terraform destor --auto-approve
+  754  terraform destroy --auto-approve
+  755  cd ..
+  756  ll
+  757  cd usemodules/
+  758  terraform destroy --auto-approve
+  759  cd ..
+  760  ll
+  761  cd linuxvm/
+  762  terraform destroy --auto-approve
+  763  cd ..
+  764  ll
+  765  cd state/
+  766  terraform destroy --auto-approve
+  767  pwd
+  768  cd ..
+  769  ll
+  770  cd modules/
+  771  ll
+  772  cd vm/
+  773  ll
+  774  terraform destroy --auto-approve
+  775  cd ..
+  776  ll
+  777  cd format/
+  778  ll
+  779  cd ..
+  780  terraform destroy --auto-approve
+  781  cd mapwithfor/
+  782  ll
+  783  terraform destroy --auto-approve
+  784  cd ..
+  785  ll
+  786  cd import/
+  787  terraform destroy --auto-approve
+  788  cd live
+  789  cd ../live/
+  790  ll
+  791  cd dev/
+  792  terraform destroy --auto-approve
+  793  cd ..
+  794  ll
+  795  cd loop/
+  796  ll
+  797  terraform destroy --auto-approve
+  798  cd ..
+  799  history
+  800  history >> terraform/cmd_history.txt
+  801  cd terraform
+  802  git add .;git commit -m "Cmd history"; git push
+  803  vi cmd_history.txt 
+  804  git add .;git commit -m "Cmd history"; git push
+  805  git stash
+  806  ll
+  807  git reset --hard HEAD~1
+  808  ll
+  809  git add .;git commit -m "Cmd history"; git push
+  810  git reset --hard HEAD~1
+  811  git pull
+  812  ll
+  813  history >> cmd_history.txt
+  814  ll
+  815  git add .;git commit -m "Cmd history"; git push
+  816  git reset --hard HEAD~1
+  817  git pull
+  818  ll
+  819  history >> cmd_history.txt
